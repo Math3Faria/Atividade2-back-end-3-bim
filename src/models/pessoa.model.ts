@@ -5,14 +5,15 @@ export interface IPessoa {
 export abstract class Pessoa implements IPessoa {
     private _nome: string;
     private _email: string;
-
     constructor(nome: string, email: string) {
         this._nome = nome;
         this._email = email;
     }
-
     public get nome(): string { return this._nome; }
     public get email(): string { return this._email; }
+
+
+
 
     public mostrarDados(): string {
         return `Nome: ${this._nome} | Email: ${this._email}`;
@@ -94,15 +95,15 @@ export class Professor extends Pessoa {
             ;
     }
 
-
-    public alterar(): Professor {
-        console.log("Todos os dados do professor foram alterados");
-        return this;
-    }
     public inserir(): Professor {
         console.log("Este professor foi adicionado");
         return this;
     }
+    public alterar(): Professor {
+        console.log("Todos os dados do professor foram alterados");
+        return this;
+    }
+
 
 
     public mostrarDados(): string {
